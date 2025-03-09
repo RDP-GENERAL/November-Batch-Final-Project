@@ -1,0 +1,76 @@
+create database mysql_project_segment_nov_2024_final_project;
+use mysql_project_segment_nov_2024_final_project;
+
+CREATE TABLE cust_details (
+    c_id INT AUTO_INCREMENT PRIMARY KEY,
+    c_name VARCHAR(100) NOT NULL,
+    c_address VARCHAR(255),
+    c_phone_number VARCHAR(10)
+)AUTO_INCREMENT=1;
+
+describe cust_details;
+select * from cust_details;
+
+INSERT INTO cust_details (c_name, c_address, c_phone_number)  
+VALUES  
+('Rajesh Kumar', '123 Park Street, Kolkata', '9876543210'),  
+('Anita Sharma', '45 MG Road, Delhi', '9123456789'),  
+('Amit Verma', '78 Lake View, Mumbai', '9988776655');  
+
+truncate table cust_details;
+
+select * from cust_details where c_phone_number='52563';
+
+CREATE TABLE inventory (
+    p_id INT AUTO_INCREMENT PRIMARY KEY,
+    p_name varchar(100) not null,
+    p_price DECIMAL(5,2) NOT NULL,
+    p_quantity INT NOT NULL
+);
+describe table inventory;
+drop table inventory;
+
+INSERT INTO inventory (p_name, p_price, p_quantity)  
+VALUES  
+('Aashirvaad Atta (1kg)', 45.00, 50),  
+('Basmati Rice (1kg)', 120.00, 30),  
+('Fortune Sunflower Oil (1L)', 110.00, 20),  
+('Tata Salt (1kg)', 48.00, 40),  
+('Sugar (1kg)', 42.00, 60),  
+('Toor Dal (1kg)', 95.00, 35),  
+('Moong Dal (1kg)', 80.00, 25),  
+('Chana Dal (1kg)', 90.00, 30),  
+('Parle-G Biscuits (800g)', 30.00, 100),  
+('Maggi Noodles (70g)', 10.00, 150),  
+('Lay’s Chips (Small Pack)', 5.00, 200),  
+('Britannia Good Day Biscuits (120g)', 25.00, 50),  
+('Surf Excel Detergent (500g)', 50.00, 40),  
+('Wheel Detergent Powder (1kg)', 38.00, 70),  
+('Colgate Toothpaste (100g)', 55.00, 60),  
+('Pepsodent Toothpaste (100g)', 30.00, 80),  
+('Nirma Detergent Cake (4x125g)', 22.00, 90),  
+('Patanjali Dant Kanti (100g)', 60.00, 45),  
+('Red Label Tea (250g)', 85.00, 25),  
+('Tata Tea Gold (500g)', 120.00, 15),  
+('Tata Agni Tea (100g)', 20.00, 75),  
+('Amul Butter (100g)', 35.00, 50),  
+('Nestle Everyday Dairy Whitener (100g)', 27.00, 55),  
+('Everest Garam Masala (50g)', 40.00, 65),  
+('MDH Kitchen King Masala (100g)', 90.00, 20);  
+
+select * from inventory;
+
+CREATE TABLE analytics_table (
+	sale_id int primary key AUTO_INCREMENT,
+    c_id INT NOT NULL,
+    c_name VARCHAR(100) NOT NULL,
+    total_bill_amount DECIMAL(10,2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)AUTO_INCREMENT=1;
+
+INSERT INTO analytics_table (c_id, c_name, total_bill_amount)  
+VALUES (101, 'Rajesh Kumar', 1250.75);
+
+select * from analytics_table;
+
+truncate table analytics_table;
